@@ -1,21 +1,21 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { DataProvider } from './Context/DataContext';
 import Header from './Components/Navigation/Header';
 import Footer from './Components/Navigation/Footer';
+import Bikes from './Components/Bikes/Bikes';
 
 function App() {
   
 
   return (
-    <div className="App h-full">
-      <Routes>
-        <Header />
-        <DataProvider>
-          
-        </DataProvider>
-        <Footer />
-      </Routes>
+    <div className="App h-full bg-primary">      
+      <Header />
+      <DataProvider>
+        <Routes>
+          <Route path='/bikes' element={<Bikes />} />
+        </Routes>
+      </DataProvider>
+      <Footer />      
     </div>
   )
 }
