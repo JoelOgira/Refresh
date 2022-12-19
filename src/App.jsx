@@ -8,7 +8,7 @@ function App() {
   
 
   return (
-    <div className="App h-full bg-primary">      
+    <div className="App h-full bg-primary px-5">      
       <Header />
       <DataProvider>
         <Routes>
