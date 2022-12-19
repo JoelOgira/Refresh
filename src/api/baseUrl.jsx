@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const baseUrl = axios.create({
-    baseURL: "https://catfact.ninja/fact"
+    baseURL: "http://localhost:8000"
 })
 
 export default baseUrl;
