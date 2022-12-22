@@ -6,7 +6,7 @@ const DataContext = createContext({});
 export const DataProvider = ({children}) => {
 
   const [bikes, setBikes] = useState([]);
-  const { data, error, isLoading } = useAxiosFetchHook('http://localhost:8000/bikes');
+  const { data, error, isLoading } = useAxiosFetchHook('http://localhost:7200/bikes');
 
   useEffect(() => {
     setBikes(data);
