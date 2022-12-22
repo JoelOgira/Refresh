@@ -9,6 +9,41 @@
       "id": 2,
       "bikeName": "Honda",
       "completed": false
+    },
+    {
+      "id": 3,
+      "bikeName": "Suzuki",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "bikeName": "Yamaha",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "bikeName": "Kawasaki",
+      "completed": false
+    },
+    {
+      "id": 6,
+      "bikeName": "Bajaj",
+      "completed": false
+    },
+    {
+      "id": 7,
+      "bikeName": "Hero Honda Karzima",
+      "completed": false
+    },
+    {
+      "id": 8,
+      "bikeName": "BMW",
+      "completed": false
+    },
+    {
+      "id": 9,
+      "bikeName": "TVS",
+      "completed": false
     }
   ]
 }
