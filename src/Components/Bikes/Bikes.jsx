@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 import DataContext from "../../Context/DataContext";
 import api from "../../api/baseUrl"
 
@@ -8,6 +9,8 @@ const Bikes = () => {
   const [motorBike, setMotorBike] = useState('');
   const [message, setMessage] = useState('');
   const [errorArea, setErrorArea] = useState(true);
+  const { id } = useParams();
+  const updatedBike = bikes.find((bike) => bike.id == id);
 
   const addBike = async () => {
     const id = bikes.length ? bikes[bikes.length - 1 ].id + 1 : 1;
@@ -24,13 +27,11 @@ const Bikes = () => {
       }
     } catch (err) {
       console.log(err.message);
-    }
-  
-    
+    }    
   }
 
-  const markedBike = (id) => {
-      setBikes(bikes.map(bike => bike.id === id ? {id, bikeName: bike.bikeName, completed: !bike.completed} : bike));    
+  const markedBike = async (id) => {
+    
   }
 
   const deleteBike = async (id) => {
@@ -51,7 +52,7 @@ const Bikes = () => {
                 <li className={` ${(!bike.completed) ? 'bg-gray-200' : 'bg-secondary'} rounded-full px-4  flex flex-row justify-between my-3`} key={bike.id}>
                 <p className='align-baseline py-4'>{bike.bikeName} </p>
                 <div className='flex flex-row space-x-4 my-2'>
-                    <button onClick={() => markedBike(bike.id)} className={`py-2 px-4 rounded-full bg-gray-400 hover:bg-primary hover:text-white`}>Marked</button>
+                    <button onClick={() => markedBike(bike.id, `${!bike.completed}`)} className={`py-2 px-4 rounded-full bg-gray-400 hover:bg-primary hover:text-white`}>Marked</button>
                     <button onClick={() => deleteBike(bike.id)} className='bg-primary py-2 px-4  rounded-full cursor-pointer text-white hover:bg-red-500'>Delete</button>
                 </div>
                 </li>
