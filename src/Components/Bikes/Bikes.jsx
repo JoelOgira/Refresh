@@ -22,17 +22,7 @@ const Bikes = () => {
   }
 
   const markedBike = async (id) => {
-    // let toUpdate = (bikes || []).find(i => i?.id === id);
-
-    // setBikes((data) => (
-    //   [
-    //     {
-    //       ...(toUpdate || {}),
-    //       completed: !(toUpdate?.completed) 
-    //     },
-    //     ...(bikes || []).filter(bike => bike?.id !== id),
-    //   ]
-    // ))
+    
     setBikes((bikes || []).map(bike => bike?.id === id ? {...bike, completed: !bike?.completed} : bike ))
   }
 
@@ -51,7 +41,7 @@ const Bikes = () => {
             {
             bikes.length ?
             (bikes.map(bike => (
-                <li className={` ${(!bike.completed) ? 'bg-gray-200' : 'bg-secondary'} rounded-full px-4  flex flex-row justify-between my-3`} key={bike.id}>
+                <li className={` ${(!bike?.completed) ? 'bg-gray-200' : 'bg-secondary'} rounded-full px-4  flex flex-row justify-between my-3`} key={bike.id}>
                 <p className='align-baseline py-4'>{bike.bikeName} </p>
                 <div className='flex flex-row space-x-4 my-2'>
                     <button onClick={() => markedBike(bike.id)} className={`py-2 px-4 rounded-full bg-gray-400 hover:bg-primary hover:text-white`}>Marked</button>
@@ -73,7 +63,7 @@ const Bikes = () => {
               onChange={e => setMotorBike(e.target.value)}
           />    
           
-          <button type="submit" className='bg-primary text-white p-3 mx-4 my-3 rounded-full px-5 hover:bg-gray-400 hover:text-black'>
+          <button type="submit" className='bg-primary border border-gray-400 text-white p-3 mx-4 my-3 rounded-full px-5 hover:bg-gray-400 hover:text-black'>
               Add Bike
           </button>
         </form>
