@@ -6,6 +6,7 @@ const Bikes = () => {
   const { bikes, setBikes, error, isLoading } = useContext(DataContext);
     
   const [motorBike, setMotorBike] = useState('');
+  const [modal, setModal] = useState(false);
 
   const addBike = async (e) => {
     e.preventDefault();
@@ -33,6 +34,10 @@ const Bikes = () => {
     } catch (err) {
       console.log(err.message)
     }
+  }
+
+  const handleBike = () => {
+    setModal(!modal);
   }
 
   return (
