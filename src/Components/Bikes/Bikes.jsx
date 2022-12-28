@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import DataContext from "../../Context/DataContext";
 import api from "../../api/baseUrl"
+import DeleteBikeModal from "./DeleteBikeModal";
 
 const Bikes = () => {
   const { bikes, setBikes, error, isLoading } = useContext(DataContext);
@@ -36,44 +37,46 @@ const Bikes = () => {
     }
   }
 
-  const handleBike = () => {
+  const handleModal = () => {
     setModal(!modal);
   }
 
   return (
-    <div className="card container overflow-y-auto grow mx-auto md:w-3/4">
-        <ul className='my-5'>
-            {
-            bikes.length ?
-            (bikes.map(bike => (
-                <li className={` ${(!bike?.completed) ? 'bg-gray-200' : 'bg-secondary'} rounded-full px-4  flex flex-row justify-between my-3`} key={bike.id}>
-                <p className='align-baseline py-4'>{bike.bikeName} </p>
-                <div className='flex flex-row space-x-4 my-2'>
-                    <button onClick={() => markedBike(bike.id)} className={`py-2 px-4 rounded-full bg-gray-400 hover:bg-primary hover:text-white`}>Marked</button>
-                    <button onClick={() => deleteBike(bike.id)} className='bg-primary py-2 px-4  rounded-full cursor-pointer text-white hover:bg-red-500'>Delete</button>
-                </div>
-                </li>
-            ))) : 
-            (<p>There are No bikes in the list</p>)
-            }
-        </ul>
+  <div className="card container overflow-y-auto grow mx-auto md:w-3/4">
+    <ul className='my-5'>
+        {
+        bikes.length ?
+        (bikes.map(bike => (
+            <li className={` ${(!bike?.completed) ? 'bg-gray-200' : 'bg-secondary'} rounded-full px-4  flex flex-row justify-between my-3`} key={bike.id}>
+            <p className='align-baseline py-4'>{bike.bikeName} </p>
+            <div className='flex flex-row space-x-4 my-2'>
+                <button onClick={() => markedBike(bike.id)} className={`py-2 px-4 rounded-full bg-gray-400 hover:bg-primary hover:text-white`}>Marked</button>
+                <button onClick={handleModal} className='bg-primary py-2 px-4  rounded-full cursor-pointer text-white hover:bg-red-500'>Delete</button>
+            </div>
+            </li>
+        ))) : 
+        (<p>There are No bikes in the list</p>)
+        }
+    </ul>
 
-        <form onSubmit={addBike}>
-          <input 
-              type="text"
-              className="p-3 px-4 rounded-full bg-gray-400 placeholder-black text-white focus:outline-none"
-              placeholder="Add Bike"
-              required
-              value={motorBike}
-              onChange={e => setMotorBike(e.target.value)}
-          />    
-          
-          <button type="submit" className='bg-primary border border-gray-400 text-white p-3 mx-4 my-3 rounded-full px-5 hover:bg-gray-400 hover:text-black'>
-              Add Bike
-          </button>
-        </form>
+    <form onSubmit={addBike}>
+      <input 
+          type="text"
+          className="p-3 px-4 rounded-full bg-gray-400 placeholder-black text-white focus:outline-none"
+          placeholder="Add Bike"
+          required
+          value={motorBike}
+          onChange={e => setMotorBike(e.target.value)}
+      />    
+      
+      <button type="submit" className='bg-primary border border-gray-400 text-white p-3 mx-4 my-3 rounded-full px-5 hover:bg-gray-400 hover:text-black'>
+          Add Bike
+      </button>
+    </form>
+      
+    {modal && <DeleteBikeModal bikes={bikes} deleteBike={deleteBike} handleModal={handleModal} />}
 
-    </div>
+  </div>
   )
 }
 
