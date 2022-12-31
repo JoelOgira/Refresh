@@ -23,7 +23,7 @@ const CatFacts = () => {
             Cat Facts
         </h1>
         
-        <div className="flex flex-wrap w-3/4 h-96 rounded-lg shadow-black bg-gray-400 p-4 mx-auto">
+        <div className="flex flex-col flex-wrap w-3/4 h-96 rounded-lg shadow-black bg-gray-400 p-4 mx-auto">
 
             <div className="mx-auto mt-3">
                 <button onClick={fetchCatFacts} className="bg-primary p-3 px-5 rounded-full">Fetch Cat Facts</button>
