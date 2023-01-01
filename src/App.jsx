@@ -5,6 +5,7 @@ import Footer from './Components/Navigation/Footer';
 import Bikes from './Components/Bikes/Bikes';
 import CatFacts from './Components/CatFacts/CatFacts';
 import Agify from './Components/Agify/Agify';
+import Excuser from './Components/Excuser/Excuser';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
         <Route path='/bikes' element={<Bikes />} />
         <Route path='/cats' element={<CatFacts />} />
         <Route path='/agify' element={<Agify />} />
+        <Route path='/excuser' element={<Excuser />} />
       </Routes>
     </DataProvider>
     <Footer />      
