@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const Agify = () => {
     const [bio, setBio] = useState(``);
-    const [name, setName] = useState(``);
+    const [name, setName] = useState(null);
 
     const predictAge = async () => {
         try {
@@ -14,10 +14,6 @@ const Agify = () => {
             console.log(err.message);
         }
     }
-
-    useEffect(() => {
-        predictAge();
-    }, []);
 
     return (
         <div className="container overflow-y-auto grow mx-auto md:w-3/4">
@@ -35,8 +31,9 @@ const Agify = () => {
             </button>
 
             <div className="bg-primary">
-                <p className="my-2">Name: <span className="text-secondary">{bio.name}</span></p>
-                <p className="my-2">Age: <span className="text-secondary">{bio.age}</span></p>
+                <p className="my-2">Name: <span className="text-secondary">{bio?.name}</span></p>
+                <p className="my-2">Age: <span className="text-secondary">{bio?.age}</span></p>
+                <p className="my-2">Count: <span className="text-secondary">{bio?.count}</span></p>
             </div>
         </div>
     )
