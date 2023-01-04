@@ -30,7 +30,7 @@ const Agify = () => {
                 Predict Age
             </button>
 
-            <div className="bg-primary">
+            <div className="bg-primary text-white">
                 <p className="my-2">Name: <span className="text-secondary">{bio?.name}</span></p>
                 <p className="my-2">Age: <span className="text-secondary">{bio?.age}</span></p>
                 <p className="my-2">Count: <span className="text-secondary">{bio?.count}</span></p>
