@@ -8,6 +8,9 @@ const Header = () => {
                     Refresh
                 </h1>
                 <div className="inline-flex space-x-4">
+                    <Link to="/" className="hover:text-secondary">
+                        Home
+                    </Link>
                     <Link to="/bikes" className="hover:text-secondary">
                         Bikes
                     </Link>
@@ -19,6 +22,9 @@ const Header = () => {
                     </Link>
                     <Link to="/excuser" className="hover:text-secondary">
                         Excuser
+                    </Link>
+                    <Link to="/counter" className="hover:text-secondary">
+                        Counter
                     </Link>
                 </div>
             </div>
