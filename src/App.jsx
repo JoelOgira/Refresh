@@ -6,6 +6,8 @@ import Bikes from './Components/Bikes/Bikes';
 import CatFacts from './Components/CatFacts/CatFacts';
 import Agify from './Components/Agify/Agify';
 import Excuser from './Components/Excuser/Excuser';
+import Count from './Components/Agify/Count';
+import Home from './Components/Home/Home';
 
 function App() {
   
@@ -15,10 +17,12 @@ function App() {
     <Header />
     <DataProvider>
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/bikes' element={<Bikes />} />
         <Route path='/cats' element={<CatFacts />} />
         <Route path='/agify' element={<Agify />} />
         <Route path='/excuser' element={<Excuser />} />
+        <Route path='/counter' element={<Count />} />
       </Routes>
     </DataProvider>
     <Footer />      
