@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Agify = () => {
     const [bio, setBio] = useState(``);
-    const [name, setName] = useState(null);
+    const [name, setName] = useState(``);
 
     const predictAge = async () => {
         try {
