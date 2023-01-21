@@ -5,7 +5,7 @@ const Count = () => {
     const { counter, increaseCounter, decreaseCounter, resetCounter } = useCounter();
 
     return (
-        <div className='container overflow-y-auto grow mx-auto md:w-3/4'>
+        <div className='container overflow-y-auto grow mx-auto md:w-3/4 text-white'>
             <div className="flex flex-row justify-between space-x-6">
                 <div>
                     {counter.count}
