@@ -56,7 +56,7 @@ const Bikes = () => {
           bikes.length ?
           ((bikes || []).map(bike => (
               <li className={` ${(!bike?.completed) ? 'bg-gray-200' : 'bg-secondary'} rounded-full px-4  flex flex-row justify-between my-3`} key={bike.id}>
-              <p className='align-baseline py-4'>{bike?.bikeName} </p>
+              <p className='align-baseline py-4 text-black'>{bike?.bikeName} </p>
               <div className='flex flex-row space-x-4 my-2'>
                   <button onClick={() => markedBike(bike?.id)} className={`py-2 px-4 rounded-full bg-gray-500 hover:bg-primary hover:text-white`}>Marked</button>
                   <button onClick={handleModal} className='bg-primary py-2 px-4  rounded-full cursor-pointer text-white hover:bg-red-500'>Delete</button>
