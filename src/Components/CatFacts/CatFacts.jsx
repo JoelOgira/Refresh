@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import useToggle from "../../Hooks/useToggle";
 
 const CatFacts = () => {
@@ -14,9 +14,9 @@ const CatFacts = () => {
             console.log(err.message);
         }
     }
-    useEffect(() => {
-        fetchCatFacts();
-    }, [])
+    // useEffect(() => {
+    //     fetchCatFacts();
+    // }, [])
 
     return (
     <div className="container overflow-y-auto grow mx-auto md:w-3/4 text-white">
