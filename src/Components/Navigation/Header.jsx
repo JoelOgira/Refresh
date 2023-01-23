@@ -20,11 +20,11 @@ const Header = () => {
                     <Link to="/agify" className="hover:text-secondary">
                         Agify
                     </Link>
-                    <Link to="/excuser" className="hover:text-secondary">
-                        Excuser
+                    <Link to="/superheroes" className="hover:text-secondary">
+                        Superheroes
                     </Link>
-                    <Link to="/counter" className="hover:text-secondary">
-                        Counter
+                    <Link to="/rqsuperheroes" className="hover:text-secondary">
+                        RQSuperheroes
                     </Link>
                 </div>
             </div>
