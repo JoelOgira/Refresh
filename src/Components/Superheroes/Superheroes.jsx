@@ -8,7 +8,7 @@ const Superheroes = () => {
 
     const fetchHeroes = async () => {
         try {
-            const res = await axios.get(`http://localhost:4500/superheroes`);
+            const res = await axios.get(`http://localhost:6500/superheroes`);
                 setHeroes(res.data);            
             setError(null);
         } catch (err) {
